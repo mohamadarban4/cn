@@ -5,20 +5,10 @@ import { cn } from '@/lib/utils';
 import { ColumnDef } from '@tanstack/react-table'
 import React from 'react'
 
-type Props = {}
-
-export default function Orderspage({}: Props) {
-  return (
-    <div className="flex flex-col gap-5 w-full">
-      <PageTitle title="Orders"/>
-       <DataTable columns={columns} data={data} />
-    </div>
-  )
-};
+type Props = {}; // eslint-disable-line @typescript-eslint/no-empty-object-type
 
 
-
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
 
   {
     accessorKey: "order",
@@ -48,20 +38,13 @@ export const columns: ColumnDef<Payment>[] = [
     header: "Method",
   },
 ]
-
-
-
-
 type Payment = {
   order: string;
   status: string;
   lastOrder:string;
   method:string;
 }
- 
-
-
-export const data: Payment[] = [
+ const data: Payment[] = [
   {
     order: "Order #001",
     status: "Completed",
@@ -153,3 +136,15 @@ export const data: Payment[] = [
     method: "Credit Card",
   }
 ]
+
+export default function Orderspage({}: Props) {
+  return (
+    <div className="flex flex-col gap-5 w-full">
+      <PageTitle title="Orders"/>
+       <DataTable columns={columns} data={data} />
+    </div>
+  )
+};
+
+
+

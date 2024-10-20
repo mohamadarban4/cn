@@ -2,7 +2,7 @@
 import React from 'react'
 import {BarChart as BarGraph,ResponsiveContainer,XAxis,YAxis,Bar} from "recharts";
 
-type Props = {}
+type Props = {}; // eslint-disable-line @typescript-eslint/no-empty-object-type
 
 const data = [
     {
